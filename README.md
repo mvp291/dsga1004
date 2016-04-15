@@ -1,9 +1,9 @@
 Ma. Elena Villalobos Ponte (mvp291)
+
 email: mvp291@nyu.edu, villalobos.maelena@gmail.com
 
-# New York University
-## MS in Data Science
-## DSGA1004: Big Data
+# MS in Data Science – New York University
+# DSGA1004: Big Data
 
 Coursework:
 * Assignment 1: Querying NYC Taxi data using SQL

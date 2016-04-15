@@ -1,0 +1,84 @@
+
+Commands to execute in AWS to run every task
+hdfs dfs -get [S3_url]
+
+Task 1
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/fare_data_week1.csv \
+-input s3://mvp291-ds1004-sp16/taxi_final/trip_data_week1.csv \
+-output s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin
+
+Task 2-a
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/FareAmounts
+
+Task 2-b
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/TripAmount
+
+Task 2-c
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/NumberPassengers
+
+Task 2-d
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/TotalRevenue
+
+Task 2-e
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/MedallionTrips
+
+Task 2-f
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/UniqueTaxis
+
+Task 3
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/TripFareJoin \
+-input s3://mvp291-ds1004-sp16/taxi_final/licenses.csv -output s3://mvp291-ds1004-sp16/taxi_final/VehicleJoin
+
+Tas 4-a
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/VehicleJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/VehicleType
+
+Tas 4-b
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.7.1-amzn-1.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input s3://mvp291-ds1004-sp16/taxi_final/VehicleJoin \
+-output s3://mvp291-ds1004-sp16/taxi_final/Top10Revenue

@@ -1,0 +1,88 @@
+Commands to execute locally to run every task
+
+Task 1
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_wednesday.csv \
+-input /mati/trips_sunday.csv \
+-input /mati/fares_wednesday.csv \
+-input /mati/fares_sunday.csv -output /mati/TripFareJoin
+
+Task 2-a
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-output /mati/FareAmounts
+
+Task 2-b
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=2 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-output /mati/TripAmount
+
+Task 2-c
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator \
+-D  mapred.text.key.comparator.options=-n \
+-file map.py -mapper map.py  \
+-file combine.py -combiner combine.py \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-output /mati/NumberPassengers
+
+Task 2-d
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file combine.py -combiner combine.py \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-output /mati/TotalRevenue
+
+Task 2-e
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file combine.py -combiner combine.py \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-output /mati/MedallionTrips
+
+Task 2-f
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-output /mati/UniqueTaxis
+
+Task 3
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares.txt \
+-input /mati/licenses.csv -output /mati/VehicleJoin
+
+Tas 4-a
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares_vehicles.txt \
+-output /mati/VehicleType
+
+Tas 4-b
+$HADOOP_HOME/2.7.2/bin/hadoop jar $HADOOP_HOME/2.7.2/libexec/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -Dmapreduce.job.maps=2 \
+-Dmapreduce.job.reduces=1 \
+-file map.py -mapper map.py  \
+-file reduce.py -reducer reduce.py \
+-input /mati/trips_fares_vehicles.txt \
+-output /mati/Top10Revenue

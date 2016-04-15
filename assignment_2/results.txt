@@ -1,0 +1,178 @@
+Task 1:
+# of lines
+668112 TripFareJoin/part-00000
+
+KEY
+0 – medallion, 
+1 – hack_license,
+2 – vendor_id,
+3 – pickup_datetime
+
+VALUE 
+0 – rate_code,
+1 – store_and_fwd_flag,
+2 – dropoff_datetime,
+3 – passenger_count,
+4 – trip_time_in_secs,
+5 – trip_distance,
+6 – pickup_longitude,
+7 – pickup_latitude,
+8 – dropoff_longitude,
+9 – dropoff_latitude,
+10 – payment_type,
+11 – fare_amount,
+12 – surcharge,
+13 – mta_tax,
+14 – tip_amount,
+15 – tolls_amount,
+16 – total_amount
+
+Task 2-a:
+0.01,4	28435
+4.01,8	239650
+8.01,12	181462
+12.01,16	89294
+16.01,20	44661
+20.01,24	23577
+24.01,28	15454
+28.01,32	12047
+32.01,36	8297
+36.01,40	4640
+40.01,44	2631
+44.01,48	1495
+48.01,None	16121
+
+Task 2-b:
+0,10	278462
+
+Task 2-c:
+0	13
+1	482749
+2	93229
+3	29656
+4	16163
+5	27424
+6	18878
+
+0	13
+1	482749
+2	93229
+3	29656
+4	16163
+5	27424
+6	18878
+
+Task 2-d:
+2013-08-04	2914129.21, 58840.40
+2013-08-07	6573997.29, 123809.01
+
+2013-08-04	2914129.21, 58840.40
+2013-08-07	6573997.29, 123809.01
+
+Task 2-e:
+Number of medallions
+13100 MedallionTrips/part-00000
+
+Task 2-f:
+Number of drivers
+26179 UniqueTaxis/part-00000
+
+Task 3:
+668112 VehicleJoin/part-00000
+
+KEY
+medallion
+
+KEY
+0 – medallion
+
+['16455C0F0C008C18A457A8DAB98B5715', 
+'CMT', 
+'2013-08-07 01:09:21', 
+'1', 
+'N', 
+'2013-08-07 01:23:24', 
+'1', 
+'842', 
+'4.1', 
+'-73.995544', 
+'40.725262', 
+'-73.985573', 
+'40.674328', 
+'CRD', 
+'15', 
+'0.5', 
+'0.5', 
+'4', 
+'0', 
+'20', 
+'SOOKNANAN,JR.,CHRISHNA', 
+'MEDALLION', 'CUR', '4B82D', '1FAHP2EW4CG127813', 'LV1', '2012', 'OWNER MUST DRIVE', '1', 'TIRU CABS ', '(718)937-4866', '', '10 METROTECH NEW YORK NY', '1/31/2015', '13:20']
+
+VALUE
+0 – hack_license,
+1 – vendor_id,
+2 – pickup_datetime
+3 – rate_code,
+4 – store_and_fwd_flag,
+5 – dropoff_datetime,
+6 – passenger_count,
+7 – trip_time_in_secs,
+8 – trip_distance,
+9 – pickup_longitude,
+10 – pickup_latitude,
+11 – dropoff_longitude,
+12 – dropoff_latitude,
+13 – payment_type,
+14 – fare_amount,
+15 – surcharge,
+16 – mta_tax,
+17 – tip_amount,
+18 – tolls_amount,
+19 – total_amount
+20 – name
+21 – type
+22 – current_status
+23 – DMV_license_plate
+24 – vehicle_VIN_number
+25 – vehicle_type
+26 – model_year
+27 – medallion_type
+28 – agent_number
+29 – agent_name
+30 – agent_telephone_number
+31 – agent_website
+32 – agent_address
+33 – last_updated_date
+34 – last_updated_time
+
+Task 4-a:
+CNG	32277.00, 457801.24, 0.03
+DSE	46704.00, 660633.99, 0.03
+HYB	444309.00, 6306649.27, 0.03
+LV1	83588.00, 1187636.99, 0.03
+NRML	22994.00, 327603.01, 0.03
+WAV	38240.00, 547802.00, 0.03
+
+Task 4-b:
+TIRU CABS 	2994874.97
+ALL TAXI MANAGEMENT INC	572760.09
+TAXIFLEET MANAGEMENT LLC	430395.15
+TEAM SYSTEMS CORP	267401.76
+WOODSIDE MANAGEMENT INC.	259504.40
+OLA CABS	245521.28
+MC GUINNESS MANAGEMENT CORP	226495.12
+WHITE AND BLUE GROUP CORP.	223613.04
+QUEENS MEDALLION LEASING INC.	205209.47
+S & R MEDALLION CORP	203880.27
+EXECUTIVE OWNERS HOLDING CORP	202441.92
+GOTHAM YELLOW LLC	192128.12
+YELLOW CAB SLS JET MANAGEMENT CORP.	184875.82
+DOWNTOWN TAXI MANAGEMENT LLC	175004.20
+ARTHUR CAB LEASING CORP.	160651.95
+J T L MANAGEMENT INC	157196.70
+GREEN APPLE MANAGEMENT CORP	155460.62
+WAILING MANAGEMENT INC	141873.61
+CHECKER MANAGEMENT CORP	141597.41
+AVENUE M MANAGEMENT CORP	137048.00
+

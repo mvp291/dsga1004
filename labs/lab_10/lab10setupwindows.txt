@@ -1,0 +1,25 @@
+https://www.python.org/downloads/windows/
+
+Select installer for Python 3.5.1 for your system (either 32 bit or 64 bit)
+
+Download and run the installer. 
+Find where python was installed (for me it was C:\Users\ecc\AppData\Local\Programs\Python\Python35).
+Add this folder to the end of your PATH environment variable. 
+
+Within your Python folder identified above, you should have a folder called "Scripts". Also add the path to this folder (e.g., C:\Users\ecc\AppData\Local\Programs\Python\Python35\Scripts) to the end of your PATH environment variable.  
+
+Test your setup: open the command prompt and type "pip" to test whether this command is recognized. Now type "python" to make sure python starts. 
+
+Now, we will install the packages needed for today's lab. 
+
+Go to http://www.lfd.uci.edu/~gohlke/pythonlibs/#rtree
+and download an rtree package (either 32 or 64 bit)
+
+Put the .whl file somewhere you can locate it, like the desktop. 
+
+Now, open the command prompt and navigate to the folder where you saved your Rtree whl file and type "pip install Rtree-0.8.2-cp35-cp35m-win_amd64.whl" (for whichever whl file you downloaded). 
+
+You can test whether rtree is installed by running python and typing "from rtree import index".
+
+
+Now, run the example script. From the command prompt, type "python spatial.py".

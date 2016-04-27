@@ -1,0 +1,26 @@
+Part II:
+Result sizes and running times for 2 on sample data and green taxi one month data¶
+Sample data: size 151
+10 loops, best of 3: 165 ms per loop
+Taxigreen06_15: size 13979
+1 loops, best of 3: 27.7 s per loop
+
+Result sizes and running times for 3 on sample data and green taxi one month data
+Sample data: size 265
+10 loops, best of 3: 167 ms per loop
+Taxigreen06_15: size 21437
+1 loops, best of 3: 27.1 s per loop
+
+Result sizes and running times for 5 on sample data and green taxi one month data
+JFK
+Sample data: size 151
+100 loops, best of 3: 6.29 ms per loop
+Taxigreen06_15: size 13979
+1 loops, best of 3: 819 ms per loop
+LGA
+Sample data: size 265
+100 loops, best of 3: 9.09 ms per loop
+Taxigreen06_15: size 21437
+1 loops, best of 3: 1.08 s per loop
+
+6) The reason why it is much faster in the second case is that we're only testing the points that intersect with the polygon bound in the point index. This decreases the number of Polygon tests considerably.

@@ -1,0 +1,32 @@
+**************** Create Table and read initial data from file ********************
+
+CREATE TABLE taxidata_init (plat DECIMAL(15,10), plon DECIMAL(15,10), dlat DECIMAL(15,10), dlon DECIMAL(15,10), d_pickup DATE, d_dropoff DATE, distance FLOAT);
+
+load data local infile 'C:/Users/ecc/Desktop/sample-taxi-data.csv' into table taxidata_init fields terminated by ',' lines terminated by '\r\n' ignore 2 lines;
+
+**************** Create Point data types for pickup and dropoff coords ********************
+
+alter table taxidata_init ADD p_point POINT;
+alter table taxidata_init ADD d_point POINT;
+
+update taxidata_init set p_point = POINT(plat,plon);
+update taxidata_init set d_point = POINT(dlat,dlon);
+
+**************** Create arbitrary polygon ********************
+
+SET @poly = 'POLYGON( (40.873233 -73.966983, 40.788547 -73.780216, 40.541669 -73.912738, 40.683449 -74.260868, 40.873233 -73.966983))';
+
+**************** Check which pickups are within polygon ********************
+SELECT ST_Within(p_point, ST_GeomFromText(@poly)) FROM taxidata_init;
+
+
+**************** Create spatial index ********************
+
+alter table taxidata_init modify p_point POINT NOT NULL;
+alter table taxidata_init modify d_point POINT NOT NULL;
+
+create spatial index p_taxidata_coords on taxidata_init(p_point);
+create spatial index d_taxidata_coords on taxidata_init(d_point);
+
+**************** Check which pickups are within polygon, but using index ********************
+SELECT ST_Within(p_point, ST_GeomFromText(@poly)) FROM taxidata_init;

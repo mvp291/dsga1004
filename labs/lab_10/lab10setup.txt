@@ -1,0 +1,15 @@
+Setup Instructions
+-------------------
+
+1. Install libspatialindex.
+
+ubuntu: sudo apt-get install libspatialindex-dev
+mac: brew install spatialindex
+
+2. Install R-tree
+
+ubuntu / mac: pip install rtree
+
+Windows: http://www.lfd.uci.edu/~gohlke/pythonlibs/#rtree (includes libspatialindex)
+
+

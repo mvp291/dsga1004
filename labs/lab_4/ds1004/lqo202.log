@@ -1,0 +1,59 @@
+lqo202
+*   a26b766 "9th commit - merge master testing1"Merge branch 'testing1'
+|\  
+| *   f0916b6 7th commit -Merging test1 and  2
+| |\  
+| * | 4fe3ae0 6th merge (2nd test1)
+* | |   e00d7a0 8th commit - merging master and testing2
+|\ \ \  
+| | |/  
+| |/|   
+| * |   9ed86f6 5th merge test1 and test2
+| |\ \  
+| | |/  
+| | * ed82ae8 2nd commit(1st in testing1)
+* | | 4053cd6 4th commit(3rd in master)
+|/ /  
+* | 74ff44c 3rd commit (2nd in master)
+|/  
+* a437641 1st Commit(master)
+mvp291
+*   a22901b (HEAD -> master) Merge branch 'feature_b'
+|\  
+| *   eb230ea (feature_b) Merge branch 'master' into feature_b
+| |\  
+| * | 5d47a10 Modified file in feature_b
+* | |   2d18740 Merge branch 'feature_a'
+|\ \ \  
+| |_|/  
+|/| |   
+| * | fae1f98 (feature_a) Modified file in feature a after merge
+* | |   5aae4f2 Merge branch 'feature_a'
+|\ \ \  
+| |/ /  
+| | /   
+| |/    
+|/|     
+| * c14c7e5 Feature a modified the file
+* | 2cd2cb5 Modified file in master
+|/  
+* 12f3500 Hello world
+sb5518
+*   87493b7 final commit, merged two into master
+|\  
+| *   5394af7 Merge three into two
+| |\  
+| * | 6e4c34b second commit in two
+* | |   9d292f7 merged three into master
+|\ \ \  
+| | |/  
+| |/|   
+| * |   4990c96 first commit after merging two and three
+| |\ \  
+| | |/  
+| | * 6d4f11f first commit in two
+* | | dd2b729 Third commit in master
+|/ /  
+* | 22f99a8 second commit in master
+|/  
+* 679c7c0 first commit

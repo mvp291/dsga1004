@@ -1,0 +1,60 @@
+Instructions for MySQL on OS X
+
+================
+To install MySQL
+================
+
+1. Go to http://dev.mysql.com/downloads/mysql/
+2. Download release: Mac OS X <your version>, DMG Archive
+3. Sign in with your Oracle account (if you don't have one, sign up for one, then go back to step 1)
+4. Fill out the survey info, then click Download Now
+5. Open the .dmg file, double-click the .pkg file
+6. Click through the installer; make sure you save the password displayed in the pop-up window at the end
+
+==========================
+To start/stop MySQL Server
+==========================
+
+1. Open System Preferences, click on the MySQL button.
+2. Click the Start/Stop MySQL Server button
+
+=======================
+To change root password
+=======================
+
+1. Start MySQL Server (if it isn't already running) 
+2. Type the following command into Terminal
+
+/usr/local/mysql/bin/mysqladmin -u root -p'oldpassword' password 'newpassword'
+
+where oldpassword is the old password and newpassword is the new password
+
+==========================
+To connect to MySQL Server
+==========================
+
+1. Start MySQL Server (if it isn't already running) 
+2. Type the following command into Terminal
+
+/usr/local/mysql/bin/mysql -u root -p
+
+and enter the root password.
+
+=====
+Notes
+=====
+-- To save some typing, you can add the following aliases to your .bashrc:
+
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+
+-- If you change your password to nothing ('newpassword' = ''), then you can omit the -p option
+
+-- If you use Homebrew, then you can ignore all (!) of the preceding instructions and just type: 
+
+  1. brew install mysql
+  2. mysql.server start
+  3. mysql -u root 
+  4. mysql.server stop
+
+   However, we do not officially support Homebrew, so you're on your own if you take this approach!

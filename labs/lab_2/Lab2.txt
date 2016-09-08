@@ -1,0 +1,96 @@
+1. Download and Install MySQL from http://dev.mysql.com/downloads/
+
+MySQL has extensive documentation, with installation instructions for different OSes, e.g., 
+  Mac OS X:   
+  Windows: http://www.mysql.com/why-mysql/windows/
+
+We have summarized the Windows- and Mac-specific instructions in the Lab 2 folder on NYU Classes
+
+2. Start and connect to your MySQL server —- see OS-specific instructions referenced in step 1
+
+3. Type the following command:
+
+show databases;
+
+If there is no database named 'test', type:
+
+create database test;
+
+Now type:
+
+use test;
+show tables; 
+
+
+
+4. You can use SQL to explore the metadata in the database, for example:
+
+select version(), current_date;
+
+select user();
+
+And the results are always tables!
+
+
+
+5. You can now start populating your database with tables and the tables with tuples. Try the following commands:
+
+create table branch		
+    (name  VARCHAR(15) NOT NULL,
+    city CHAR(30),
+    assets INT,
+    openDate DATE);
+
+
+insert into branch values ('broadway','new york',20000000,'2000-01-01');
+insert into branch values ("fifthave","new york",200000000,"2000-01-01");
+
+select * from branch;
+
+insert into branch values (NULL,"new york",200000000,"1999-01-01");
+
+
+
+6. Create a file called branch.txt (make sure the fields are separated by tabs):
+soho	new york	5000	1993-02-04	 
+midtown	new york	8000	1972-12-24	 
+midtown	\N	7000	\N	 
+midtown	new york	9000	NULL
+midtown	new york	10000	 
+
+
+
+7. Load the file you just created by typing:
+
+LOAD DATA LOCAL INFILE '/path/branch.txt' INTO TABLE branch;
+
+select * from branch;
+
+
+8. We can add a column to the table by typing the following:
+
+alter table branch add manager char(30);
+
+describe branch;
+
+
+
+9. We can go back and fill in this column for the existing rows. For example, type 
+
+update branch
+set manager = "john" where name="broadway";
+
+select * from branch;
+
+
+
+10. Now we can delete our table.
+
+delete from branch;
+
+drop table branch;
+
+describe branch;
+
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "DSGA1004 Lab 9",
+  "homepage": "https://github.com/mvp291/dsga1004_lab9",
+  "authors": [
+    "Luisa Quispe <lqo202@nyu.edu>",
+    "Ma. Elena Villalobos Ponte <villalobos.maelena@gmail.com>",
+    "Maria Leonor Zamora Maass <mzm239@nyu.edu>"
+  ],
+  "description": "MS in Data Science Candidate - NYU",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^2.2.3",
+    "d3": "^3.5.16"
+  }
+}

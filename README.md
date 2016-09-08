@@ -1,6 +1,7 @@
 # MS in Data Science – New York University
 # DSGA1004: Big Data
 Instructors: Professor Juliana Freire, Dr. Erin Carson, Dr. Nick Knight
+
 Text: Mining of Massive Data Sets by Anand Rajaraman, Jure Leskovec and Jeff Ullman.
 
 The objective of this course is to study the foundations of data storage and processing at scale.
@@ -22,5 +23,8 @@ You can find an overview and details on the course website: https://vgc.poly.edu
 
 ### Project (25% - Group)
 Group: Maria Leonor Zamora Maass <mzm239@nyu.edu>, Luisa Eugenia Quispe Ortiz <lqo202@nyu.edu>
+
 The objective of the term project was to analyze a massive dataset using the concepts learned in the course.
 We decided to analyze taxi data, in particular we focused on the analysis of short trips (those that could have been made by foot or bike).
+
+The final report for this project can be found [here](https://docs.google.com/document/d/14Vd7tmXk9-YkSb2OSF8hMzDQMfWe84GuOhChThgHz1I/edit?usp=sharing).
